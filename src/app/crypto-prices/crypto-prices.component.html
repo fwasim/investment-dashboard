@@ -1,0 +1,20 @@
+<div>
+  <h3>Below are the currencies you own: </h3><br>
+</div>
+
+<div>
+	<table>
+		<tr>
+			<th>Pair</th>
+			<th>Rate</th>
+		</tr>
+		<tr *ngFor="let pair of currencyPairs">
+			<td>{{pair.currency1}}/{{pair.currency2}}</td>
+			<td>{{pair.rate}}</td>
+			<button (click)="removeCurrencyPair(pair);">x</button>
+		</tr>
+	</table>
+</div>
+<div>
+	<label>Pair: <input type="text" #newCurrencyPair></label><button (click)="addNewPair(newCurrencyPair.value); newCurrencyPair.value=''">Add new pair</button>
+</div>
